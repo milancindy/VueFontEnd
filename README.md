@@ -1,6 +1,11 @@
 # developer_elementUI初始框架
+
+开发工具：WebStorm >2017, Node.js >V14
+
 点击 PostMessage按钮进行消息传递
+
 点击 EL 弹出气泡提示窗口
+
 点击 Welcome 文字进行store计数
 
 ## Project setup
