@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>String对象</title>
+<script>
+window.onload=function(){
+  var myrandom=Math.floor(Math.random()*100);
+  var myBtn=document.getElementById("btn");
+  var myInput=document.getElementById("myIn");
+  var myDisplay=document.getElementById("display");
+  myBtn.onclick=function(){
+	  myValue=myInput.value;
+	  if(isNaN(myValue)) myDisplay.innerHTML="请0-100输入数字";
+	  else{
+		if(myValue>myrandom) myDisplay.innerHTML="数据大了！";
+		else if(myValue<myrandom) myDisplay.innerHTML="数据小了！";
+		     else myDisplay.innerHTML="恭喜您，猜对了！";
+	  }
+  }
+}
+</script>
+<style>
+#display{ background-color:red; color:white; font-size:16px; font-weight:bold;}
+</style>
+</head>
+<body>
+ <input type="text" id="myIn">
+ <input type="button" value="猜数" id="btn" />
+ <label id="display"></label>
+</body>
+</html>

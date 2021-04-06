@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS过渡属性</title>
+	<style>
+ 
+		.box {
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			background-color: red;
+ transition-property: all; 				/*all:表示所有属性。*/
+			transition-duration: 2s;     			/* 过渡持续时间 */
+			transition-timing-function:ease-out;	/* 动画变幻速度:减速*/
+			transition-delay: 1s;   				 	/* 动画延迟 */
+
+		}
+ 
+		.box:hover {
+			width: 600px;
+			background-color: blue;
+		}
+ 
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

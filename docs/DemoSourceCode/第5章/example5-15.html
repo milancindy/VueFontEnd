@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Date对象</title>
+<script>
+window.onload=function(){
+	Stamp = new Date();
+	document.write('<font size="2" ><B>' + Stamp.getFullYear()+"年"+(Stamp.getMonth() + 1) +"月"+Stamp.getDate()+ "日"+ '</B></font><BR>');
+	var Hours;
+	var Mins;
+	var Time;
+	Hours = Stamp.getHours();
+	if (Hours >= 12) 
+	{  Time = " 下午"; }
+	else	
+	{Time = " 上午"; }
+	if (Hours > 12) {Hours -= 12;}
+	if (Hours == 0) {Hours = 12;}
+	Mins = Stamp.getMinutes();
+	if (Mins < 10) {	Mins = "0" + Mins; }
+	document.write('<font size="2"><B>' + Time + Hours + ":"+ Mins  + '</B></font>');
+}
+</script>
+</head>
+
+<body>
+</body>
+</html>

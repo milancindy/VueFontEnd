@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>贪婪模式</title>
+<script>
+window.onload=function(){
+  var str="<b>Linux</b> an <b>php</b> linux abc";
+  var pattern=/<b>.*<\/b>/g;
+  document.write("源串如下：<br>"+str);
+  strArr=str.match(pattern);
+  document.write("<br>找到的匹配的子串如下：<br>");
+  for(i=0;i<strArr.length;i++){
+	   document.write(strArr[i]+"<br>");
+  }
+}
+</script>
+</head>
+<body>
+</body>
+<html>

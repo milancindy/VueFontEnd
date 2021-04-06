@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<title>钩子函数bind的引用</title>
+		<script src="js/vue.min.js"></script>
+	</head>
+	<body>
+	<div id="app"  v-runoob:hello.a.b="message">
+	</div>
+	 
+	<script>
+	Vue.directive('runoob', {
+	  bind: function (el, binding, vnode) {
+	    var s = JSON.stringify
+		
+	    el.innerHTML =
+		  '钩子函数bind中各参数的取值：<br />' +
+	      '<b>name:</b> '       + s(binding.name) + '<br>' +
+	      '<b>value:</b> '      + s(binding.value) + '<br>' +
+	      '<b>expression:</b> ' + s(binding.expression) + '<br>' +
+	      '<b>argument:</b>'   + s(binding.arg) + '<br>' +
+	      '<b>modifiers:</b>'  + s(binding.modifiers) + '<br>' +
+	      '<b>vnode keys:</b>' + Object.keys(vnode).join(', ')
+	  }
+	})
+	new Vue({
+	  el: '#app',
+	  data: {
+	    message: 'Hello Vue world!'
+	  }
+	})
+	</script>
+	</body>
+	 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>导航元素</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/jquery-1.11.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script>
+			$(function(){
+				$(".nav-tabs li").click(function(){
+					$(".nav-tabs li").removeClass("active");
+					$(this).addClass("active");
+				});
+			})
+		</script>
+	</head>
+	<body>
+	  <div class="container" style="padding: 30px 100px 10px;">
+		<nav>
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="##">Home</a></li>
+				<li><a href="##">CSS3</a></li>
+				<li><a href="##">Sass</a></li>
+				<li><a href="##">jQuery</a></li>
+				<li><a href="##">Responsive</a></li>
+			</ul><br><br>
+			<ul class="nav nav-pills">
+				<li class="active"><a href="##">Home</a></li>
+				<li><a href="##">CSS3</a></li>
+				<li><a href="##">Sass</a></li>
+				<li><a href="##">jQuery</a></li>
+				<li class="disabled"><a href="##">Responsive</a></li>
+			</ul>
+		</nav>
+	  </div>
+	</body>
+</html>

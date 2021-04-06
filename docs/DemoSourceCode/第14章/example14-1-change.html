@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+	    	<title>Vue组件创建方法一</title>
+			<script src="js/vue.min.js"></script>
+		</head>
+		<body>
+			<div id="app">
+				　<!--调用驼峰方式命名组件-->
+				　<my-com></my-com>
+			</div>
+			<script>
+				var com1 = Vue.extend({
+				   template : "<h3>使用vue.extend创建的组件1</h3>"   
+				})
+				//驼峰方式命名组件
+				Vue.component('myCom',com1)
+				var vm=new Vue({
+					el:'#app',
+					data:{
+						},
+				});
+			</script>
+		</body>
+		</html>

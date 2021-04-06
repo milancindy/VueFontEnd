@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>form对象属性、事件、方法</title>
+<script type="text/javascript">
+  window.onload=function(){
+   var myBtn=document.getElementById("btn");
+   myBtn.onclick=function(){
+	 newWin=window.open("","","title=hello,height=300,width=350") 
+ 	 //通过表单的length属性，输出表单form1内嵌的表单元素的个数 
+     newWin.document.write("文档中共包含"+document.form1.length+"个元素,分别是：<P>");   //再通过length属性控制循环输出各个元素的名称 
+     newWin.document.write("<UL>") 
+     for(i=0;i<document.form1.length;i++){
+       newWin.document.write("<LI>"+document.form1.elements[i].name+"</LI>"); 
+     }
+     newWin.document.write("<UL>") 
+    }
+  }
+</script>
+</head>
+<body>
+<form  name="form1" action ="login.aspx"> 
+  文本框1:<input name ="lbCurrent" /><P> 
+  文本框2:<input name ="lbNext" /><P> 
+  <H3>单击按钮显示表单中的元素信息:</H3> 
+  请单击按钮<input type="button"  id="btn" name="lyd" value="显示表单中的元素名称" /> 
+</form> 
+</body>
+</html>

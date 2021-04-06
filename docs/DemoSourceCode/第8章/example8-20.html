@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>事件举例</title>
+<style>
+#mydiv{background:#00BFFF;position:absolute;width:100px;height:100px; }
+</style>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $("#btn").click(function(){
+		$("#mydiv").fadeTo("slow", 0.5);
+		$("#mydiv").mousedown(function(event) {
+			var offset = $("#mydiv").offset();
+			x1 = event.clientX - offset.left;
+			y1 = event.clientY - offset.top;
+			$("#mydiv").mousemove(function(event) {
+				$("#mydiv").css("left", (event.clientX - x1) + "px");
+				$("#mydiv").css("top", (event.clientY - y1) + "px");
+			});
+			$("#mydiv").mouseup(function(event) {
+				$("#mydiv").unbind("mousemove");
+			});
+		});
+	})
+})
+</script>
+</head>
+<body>
+<button id="btn">鼠标拖动</button>
+<div id="mydiv" ></div>
+</body>
+</html>

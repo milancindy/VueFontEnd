@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery可见性过滤选择器</title>
+<script src="js/jquery-1.11.2.js"></script>
+<script>
+  $(document).ready(function(){
+	  	$("a[title]").css({	"color":"#FF9600",
+"font-size":"12px",
+"text-decoration":"none"});
+  });
+</script>
+</head>
+<body>
+ <a href="#" title="first">第一个包含title属性的a元素</a><br/>
+ <a href="#">第一个不包含title属性的a元素</a><br/>
+ <a href="#" title="second">第二个包含title属性的a元素</a><br/>
+ <a href="#">第二个不包含title属性的a元素</a><br/>
+ <a href="#" title="third">第三个包含title属性的a元素</a>
+</body>
+</html>

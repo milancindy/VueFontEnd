@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<title>Vue组件创建方法一</title>
+		<script src="js/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			　<mycom></mycom>
+		</div>
+		<script>
+			Vue.component('mycom',{
+			   template : "<h3>使用vue.extend创建的组件</h3>"   
+			})
+			var vm=new Vue({
+				el:'#app',
+				data:{
+					},
+			});
+		</script>
+	</body>
+	</html>

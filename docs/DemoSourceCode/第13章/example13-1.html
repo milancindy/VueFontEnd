@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>第一个Vue程序</title>
+		<!-- 1. 导入Vue -->
+		<script src="js/vue.min.js"></script>
+	</head>
+	<body>
+		<!--下面三行是Vue实例所控制的区域，就是MVVM中的View层-->
+		<div id="test">
+			<p>{{msg}}</p>
+		</div>
+		<!-- 下面<script>标记是MVVM中的ViewModel层-->
+		<script>
+			//2.创建一个Vue实例
+			var vm=new Vue({
+				el:'#test',//表示当前Vue实例所控制的区域
+				//下面data是MVVM中的Model层，专门用来保存每个页面的数据
+				data:{
+					msg:'Hello Vue World!' //通过Vue指令，把数据渲染到页面上的数据
+				}
+			});
+		</script>
+	</body>
+	</html>

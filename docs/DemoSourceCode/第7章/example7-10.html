@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>正则表达式match方法</title>
+<script>
+window.onload=function(){
+ var url = 'http://www.baidu.com?a=1&b=2&c=3';
+ var reg = /([^?&=]+)=([^?&=])*/;
+ var result = url.match(reg);
+ document.write(result+"<br>"); //输出 a=1, a, 1
+ document.write(result.index+"<br>"); //21
+ document.write(result.input+"<br>"); //http://www.baidu.com?a=1&b=2&c=3
+}
+</script>
+</head>
+<body>
+
+
+</body>
+<html>

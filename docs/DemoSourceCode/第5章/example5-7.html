@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>continue语句</title>
+<script>
+ i=0;							//初值
+ count=0;						//控制每输出8个数据换行的计数器
+ while (i<100){					//循环语句
+   if(i%3==0 || i%2==0) {		//是2或3的倍数
+	  i++;
+	  continue;					//退出本次循环，进行下一次循环
+   }
+   count++;
+   if(count>8) {				//每8次进行控制换行
+	   document.write("<br>");	//输出换行
+	   count=0;					//换行计数器清零
+   }
+   document.write("&nbsp;",i);	//输出空格和相应的数据
+   i++;
+ }
+</script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DOM操作</title>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p").eq(0).after("<p>原始第一段落后插入元素</p>");
+	$("p").eq(2).before("<p>原始第二段落前插入元素</p>");
+	$("p").eq(3).replaceWith("<p>原始第二段内容修改</p>");
+	$("p").eq(4).empty();//删除原始第一段落
+  });
+});
+</script>
+</head>
+<body>
+
+<button>DOM操作测试</button>
+<p>这是原始第一个段落。</p>
+<p>这是原始第二个段落。</p>
+<p>这是原始第三个段落。</p>
+</body>
+</html>

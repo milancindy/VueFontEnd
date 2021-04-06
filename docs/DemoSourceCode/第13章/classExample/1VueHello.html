@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js"></script>
+		
+	</head>
+	<body>
+		<!--下面这三行就是View层-->
+		<div id="app">
+			{{msg}}<br>,flag的值是{{flag}}---{{msg}}
+		</div>
+		
+		<!--定义的ViewModel层-->
+		<script>
+			var vm=new Vue({
+				el:'#app',
+				//定义Model层
+				data:{
+					msg:'Hello Vue World!',
+					flag:true
+				}
+			})
+		</script>
+	</body>
+</html>

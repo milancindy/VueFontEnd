@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	<title>Vue组件实验</title>
+	<script src="js/vue.min.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		.myTop{
+			margin-top: 10px;
+		}
+		.myLi{
+					margin-top: 10px;
+					
+				}
+		ul li span{ cursor: pointer; }
+		</style>
+		</head>
+		<body>
+			<div class="container myTop">
+				<div id="app">
+					<div class="form-group">
+						<label>微博内容：</label>
+						<textarea  class="form-control" v-model="msg"></textarea>
+					</div>
+					<div class="form-group">
+						<input type="button" value="发表微博" class="btn btn-primary"
+						@click="add()">
+					</div>
+					
+					<h2>微博列表：</h2>
+					<ul class="list-group">
+						<li  class="list-group-item myLi" v-for="(v,i) in article">
+							<span class="badge" @click="del(i)">删除</span>
+							 {{v}}</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</body>
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					article:[
+							"武汉加油",
+							"中国加油！"
+					],
+					msg:''
+				},
+				methods:{
+					add:function(){
+						//unshift() 把一个元素添加到数组的开头，并返回数组的新长度。
+						this.article.unshift(this.msg);
+					},
+					del:function(i){
+						//splice() 删除第i个位置后的一个元素
+						this.article.splice(i,1);
+					}
+				}
+			});
+		</script>
+	</html>

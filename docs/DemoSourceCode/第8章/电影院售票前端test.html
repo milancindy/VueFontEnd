@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>电影售票前端</title>
+<style>
+*{ margin:0px; padding:0px;}
+#mainBox{ border:1px solid blue; width:972px; height:500px; margin:100px auto; position:relative;}
+#box{width:485px; height:500px; border:1px solid red;}
+#box ul{list-style:none;}
+#box ul li{width:29px; height:30px; background:url(images/bg.png) 0px -28px; cursor:pointer; float:left; margin:10px;}
+#box ul li span{display:none;}
+#box ul li.selected{ background:url(images/bg.png) 0px 0px; }
+#box ul li.numDisp{ background:#F60; color:white; width:25px;
+height:25px; text-align:center; line-height:25px; border-radius:50%; margin:5px;}
+#right{ position:absolute; width:485px; height:500px; top:0px;left:486px; border:1px solid blue;}
+#right p{ margin-left:20px;}
+#right p.seat span{ border: 1px solid red; color:red; margin:10px;}
+#right p.selectedSum span,#right p.thisTime span{color:red; font-size:20px; margin:5px; font-weight:bolder;}
+#btn{ width:200px; background:#F06; color:white; font-size:20px; height:50px; margin-left:100px;}
+</style>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+$(function(){
+	/** 获取当前时间 **/
+  function p(s) {
+    return s < 10 ? '0' + s: s;
+  }
+
+  var myDate = new Date();
+  var year=myDate.getFullYear();//获取当前年
+  var month=myDate.getMonth()+1;//获取当前月
+  var date=myDate.getDate(); //获取当前日
+  var h=myDate.getHours();       //获取当前小时数(0-23)
+  var m=myDate.getMinutes();     //获取当前分钟数(0-59)
+  var now=year+'年'+p(month)+"月"+p(date)+"日 "+p(h)+':'+p(m);
+  $("p.thisTime span").html(now);
+	for(i=1;i<11;i++){
+		$("#box ul.appendLi").append("<li class='numDisp'>"+i+"</li>");
+		for(j=1;j<10;j++){
+			$("#box ul.appendLi").append("<li><span>"+i+"排"+two(j)+"座</span></li>");
+		}
+	}
+	function two(number){
+		return number>9?number:"0"+number;
+	}
+	$("#box ul li").click(function(){
+		
+		if($(this).hasClass("selected")){
+			$(this).removeClass("selected");
+		}else{
+			$(this).addClass("selected");
+		}
+		if($(".selected").length>5){
+			alert("一次最多仅能买5张票！")	
+			$(this).removeClass("selected");
+		}else{
+			selectedText="";
+			$(".selected").each(function(index, element) {
+               selectedText+="<span>"+$(this).find("span").html()+"</span>"; 
+            });
+			$("p.seat").html("座位："+selectedText);
+			$("p.selectedSum span").html($(".selected").length)
+			$("p.ticketGe span").html("￥30 * "+$(".selected").length)
+			pj=$("input[name=pj]:checked").val()
+			$("p.ticketTotal span").html(eval(pj * $(".selected").length)+"元")
+			
+			
+		}
+		
+	});
+	$("input[name=pj]").change(function(){
+		pj=$("input[name=pj]:checked").val()
+		$("p.ticketTotal span").html(eval(pj * $(".selected").length)+"元")
+	});
+	/**
+ * 
+ * 获取当前时间
+ */
+function p(s) {
+    return s < 10 ? '0' + s: s;
+}
+
+var myDate = new Date();
+//获取当前年
+var year=myDate.getFullYear();
+//获取当前月
+var month=myDate.getMonth()+1;
+//获取当前日
+var date=myDate.getDate(); 
+var h=myDate.getHours();       //获取当前小时数(0-23)
+var m=myDate.getMinutes();     //获取当前分钟数(0-59)
+var s=myDate.getSeconds();  
+
+var now=year+'-'+p(month)+"-"+p(date)+" "+p(h)+':'+p(m)+":"+p(s);
+})
+</script>
+</head>
+
+<body>
+<div id="mainBox">
+    <div id="box">
+      <ul class="appendLi">
+      </ul>
+    </div>
+    <div id="right">
+      <p >影院：王者归来影世城</p><br>
+      <p >影厅：八号厅</p><br>
+      <p class="thisTime">时间：<span></span></p><br>
+      
+      
+      <p class="seat">座位：</p><br>
+      <p class="selectedSum">已经选择了<span>0</span>个座位，再次点击座位可取消</p>
+      <br>
+      <p class="ticketGe">
+        单价：
+          <input type="radio" name="pj" value="50" checked>50元
+          <input type="radio" name="pj" value="35">35元
+      
+      </p>
+      <br>
+      <p class="ticketTotal">总计： <span></span></p><br>
+      <p> <input type="button" value="确认信息，下单" id="btn"></p>
+    </div>
+</div>
+</body>
+</html>

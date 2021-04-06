@@ -1,0 +1,1 @@
+document.write("Javascript引用方式！");

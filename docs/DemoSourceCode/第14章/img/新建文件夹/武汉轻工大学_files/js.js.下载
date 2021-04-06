@@ -1,0 +1,48 @@
+$(function(){
+    // PC端导航切换
+    var window_width = $(window).width();
+    if (window_width > 768) {
+        $('.nav_box li').hover(function() {
+            $('.nav_box li dl').stop().fadeIn('fast');
+        }, function() {
+            $('.nav_box li dl').stop().fadeOut('fast');
+            $(this).children('a').removeClass('hot');
+        });
+        $('.nav_box li>a').mouseover(function () {
+            $(this).addClass('hot');
+            $(this).siblings('dl').addClass('bg');
+            $(this).parent().siblings('li').children('a').removeClass('hot');
+            $(this).parent().siblings('li').find('dl').removeClass('bg');
+        });
+        $('.nav_box li dl').mouseover(function () {
+            $(this).siblings('a').addClass('hot');
+            $(this).addClass('bg').parent('li').siblings('li').find('dl').removeClass('bg');
+        });
+    }
+    // 手机端导航切换
+    $('.nav_icon').click(function() {
+		$('.bg_black').fadeIn('fast', function() {
+			$('.nav_box').show();
+		});
+	});
+	$('.bg_black').click(function() {
+		$('.nav_box').hide('fast', function() {
+			$('.bg_black').fadeOut('fast');
+		});
+	});
+    // 底部二維碼
+    $('.foot_top .ewms li a').hover(function() {
+    	$(this).siblings('.ewb_box').stop().fadeIn('fast');
+    }, function () {
+    	$(this).siblings('.ewb_box').stop().fadeOut('fast');
+    });
+    // 首页新闻处table切换
+    $('.tit h2').mouseover(function() {
+    	var idx = $(this).index();
+    	$(this).addClass('hot').siblings('h2').removeClass('hot');
+    	$(this).parent('.tit').find('a').eq(idx).show().siblings('a').hide();
+    	$(this).parent().siblings().find('ul').eq(idx).show().siblings('ul').hide();
+    });
+
+});
+

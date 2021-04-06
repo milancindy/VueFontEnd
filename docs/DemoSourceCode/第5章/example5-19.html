@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>混合法定义对象</title>
+<script>
+window.onload=function(){
+   //使用构造方法声明属性
+	function User(name, age, address, mobile, email) {
+		this.name = name;
+		this.age = age;
+		this.address = address;
+		this.mobile = mobile;
+		this.email = email;
+	};
+	//使用原型方法声明方法
+	User.prototype.show = function() {
+		document.write("name:" + this.name + "<br/>");
+		document.write("age:" + this.age + "<br/>");
+		document.write("address:" + this.address + "<br/>");
+		document.write("mobile:" + this.mobile + "<br/>");
+		document.write("email:" + this.email + "<br/>");
+	}
+	var u1 = new User("刘红",20,"辽宁", "13612345678", "lh1688@163.com");
+	var u2 = new User("张普",18, "河南", "13812345678", "lina@163.com");
+	u1.show();
+	u2.show();
+
+}
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

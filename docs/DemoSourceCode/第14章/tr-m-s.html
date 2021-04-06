@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{msg}}
+			<maincomp></maincomp>
+		</div>
+		<template id="tmp">
+			<h1>{{mainmsg}}</h1>
+		</template>
+		<script>
+			Vue.component('maincomp',{
+				template:'#tmp',
+				data:function(){
+					return{
+						mainmsg:'world mainCompontent data'
+					}
+				}
+			})
+			var vm=new Vue({
+				el:'#app',
+				data:{
+					msg:'hello Main'
+				}
+			})
+		</script>
+	</body>
+</html>

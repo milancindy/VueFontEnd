@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>document对象属性</title>
+<style>
+body{ background-color:#CF9;}
+</style>
+<script>
+window.onload=function(){
+  myDisp=document.getElementById("disp");
+  myDisp.innerHTML="当前文档的标题："+document.title+"<br>";  
+  myDisp.innerHTML+="当前文档的最后修改日期："+document.lastModified+"<br>"; 
+  myDisp.innerHTML+="当前文档中包含"+document.links.length+"个超级链接"+"<br>";   //输出超级链接的个数
+  myDisp.innerHTML+="当前文档中包含"+document.images.length+"个图像"+"<br>";   
+//输出图像的个数
+myDisp.innerHTML+="当前文档中包含"+document.forms.length+"个表单"+"<br>";
+//输出表单的个数 
+}
+</script>
+</head>
+<body>
+ <a href="http://www.whpu.edu.cn">超级链接1</A>  <!--形成超级链接--> 
+ <a href="http://www.baidu.com">超级链接2</A> 
+ <img src="images/0.jpg" height="100" width="120" />  <!--链接图像-->
+ <img src="images/1.jpg" height="100" width="120" />  <!--链接图像--> 
+ <img src="images/2.jpg" height="100" width="120" />  <!--链接图像-->  
+ <form action ="login.php"> 
+  <input type="text" id="username" /> 
+ </form> 
+ <div id="disp"></div>
+</body>
+</html>

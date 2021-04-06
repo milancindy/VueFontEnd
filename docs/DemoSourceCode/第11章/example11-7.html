@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>输入框组 额外元素</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/jquery-1.11.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	  <div class="container" style="padding: 30px 100px 10px;">
+		<div class="input-group">
+		  <span class="input-group-addon">
+		    <input type="checkbox" aria-label="...">
+		  </span>
+		  <input type="text" class="form-control" aria-label="...">
+		</div>
+		<br>
+		<div class="input-group">
+		  <span class="input-group-addon">
+		    <input type="radio" aria-label="...">
+		  </span>
+		  <input type="text" class="form-control" aria-label="...">
+		</div>
+		<br>
+		<div class="input-group">
+		  <input type="text" class="form-control" placeholder="Search for...">
+		  <span class="input-group-btn">
+		    <button class="btn btn-default" type="button">搜索</button>
+		  </span>
+		</div>
+		<br>
+		<div class="input-group">
+		  <input type="text" class="form-control" placeholder="Search for...">
+		  <span class="input-group-btn">
+		    <button class="btn btn-default" type="button">
+				<span class="glyphicon glyphicon-search"></span>
+			</button>
+		  </span>
+		</div>
+		<br>
+		<div class="input-group">
+		  <div class="input-group-btn">
+		    <button type="button" class="btn btn-default 
+		       dropdown-toggle" data-toggle="dropdown">下拉菜单
+		      <span class="caret"></span>
+		    </button>
+		    <ul class="dropdown-menu">
+		     <li><a href="#">功能</a></li>
+		     <li><a href="#">另一个功能</a></li>
+		     <li><a href="#">其他</a></li>
+		     <li class="divider"></li>
+		     <li><a href="#">分离的链接</a></li>
+		    </ul>
+		   </div>
+		   <input type="text" class="form-control">
+		  </div>
+        </div>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>换行修饰符</title>
+<script>
+window.onload=function(){
+  var str="Linuxand php,\nLINUXaa and linux and lamp";
+  var pattern=/^linux/igm;  //把每一行中以linux开头的匹配出来
+  document.write("源串如下：<br>"+str);
+  strArr=str.match(pattern);
+  document.write("<br>找到的linux子串如下：<br>");
+  for(i=0;i<strArr.length;i++){
+	   document.write(strArr[i]+"<br>");
+  }
+}
+</script>
+</head>
+<body>
+</body>
+<html>

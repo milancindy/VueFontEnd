@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>getElementsByName方法</title>
+<script> 
+window.onload=function(){
+  var myName=document.getElementsByName("abc");
+  var myDisp=document.getElementById("disp");
+  myDisp.innerHTML="选中的复选个数是："+myName.length+"<br>";
+  myDisp.innerHTML+="第2个复选框的提交的值是:"+myName[1].value+"<br>";
+  myDisp.innerHTML+="第3个复选框的选中状态是:"+myName[2].checked+"<br>";
+}
+</script> 
+</head>
+
+<body>
+ <form action="reg.php" method="post">
+   用户名：<input type="text" name="username"><br>
+   爱好：
+    <input type="checkbox" name="abc" value="music">音乐
+    <input type="checkbox" name="abc" value="football">足球
+    <input type="checkbox" name="abc" value="badminton" checked>羽毛球
+    <input type="checkbox" name="abc" value="basketball">篮球
+ </form>
+ <div id="disp"></div>
+</body>
+</html>

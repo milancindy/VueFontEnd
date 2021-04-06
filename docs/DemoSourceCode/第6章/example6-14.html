@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>childNodes属性</title>
+<script type="text/javascript">
+  window.onload=function(){
+	elementSum=0;			//元素结点计数器
+	textSum=0;				//文本结点计数器
+    var oUl=document.getElementById("ul");
+    var span1=document.getElementById("span1");
+	var span2=document.getElementById("span2");
+	var span3=document.getElementById("span3");
+	for(var i=0;i<oUl.childNodes.length;i++){
+		span2.innerHTML+=oUl.childNodes[i].nodeType+" - ";
+        switch(oUl.childNodes[i].nodeType){
+		 case 1:elementSum++;
+		 		break;
+		 case 3: textSum++
+        }
+    }
+	span1.innerHTML=oUl.childNodes.length;
+    span2.innerHTML=elementSum;
+	span3.innerHTML=textSum;
+  }
+</script>
+</head>
+<body>
+  <ul id="ul">
+    <li>音乐</li>
+    <li>足球</li> 
+    羽毛球
+  </ul>
+  chileNodes显示的节点数：<span id="span1"></span><br>
+  其中：<br>
+   元素类型的节点数是：  <span id="span2"></span><br>
+   文本类型的节点数是：  <span id="span3"></span>
+  <br/>
+</body>
+</html>

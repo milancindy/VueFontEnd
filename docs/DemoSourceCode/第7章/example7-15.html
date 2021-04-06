@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>评分</title>
+<style>
+*{margin:0px; padding:0px;}
+#box{	width:600px; 
+		height:115px; 
+		background:pink;
+        margin:0 auto;}
+#box ul {list-style:none;}
+#box ul li{ background:url(1.jpg) no-repeat; width:120px; height:115px;
+float:left; cursor:pointer;}
+#box ul li.active{background:url(1.jpg) 0px -115px;}
+#display{ width:600px; height:25px; text-align:center; 
+margin:0px auto;}
+</style>
+<script>
+window.onload=function(){
+  var myDisplay=document.getElementById("display"); 
+  var myLI=document.getElementsByTagName("li");
+  var py=["非常差","差","一般","好","非常好",];
+  for(var i=0;i<myLI.length;i++){
+    myLI[i].index=i;//用来指出哪一个
+    myLI[i].onmouseover=function(){
+    for(var j=0;j<this.index+1;j++)
+      myLI[j].className="active";
+    }
+  	myLI[i].onmouseout=function(){
+  	for(var j=0;j<this.index+1;j++)
+    	myLI[j].className="";
+  	}
+  	myLI[i].onclick=function(){
+    	myDisplay.innerHTML="您的评分分数是："+(this.index+1)+
+                "分，您的评语是："+py[this.index];
+  	}
+  }
+}
+    </script>
+
+</head>
+
+<body>
+<div id="box">
+   <ul>
+      <li></li>
+      <li></li>
+ 	  <li></li>
+      <li></li>
+      <li></li>
+  </ul>
+  
+</div>
+<div id="display"></span>
+</body>
+</html>

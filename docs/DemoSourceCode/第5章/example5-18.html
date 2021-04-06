@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>原型法定义对象</title>
+<script>
+window.onload=function(){
+  var str1=new String("  hello  ")
+  String.prototype.trimStr= function() { 
+ 	return this.replace(/(^\s*)|(\s*$)/g, ""); 
+  };
+  String.prototype.ltrim = function() { 
+ 	return this.replace(/(^\s*)/g, ""); 
+  };
+  String.prototype.rtrim = function() { 
+ 	return this.replace(/(\s*$)/g, ""); 
+  };
+  //调用方式
+  var eg1 = str1.trimStr();
+  document.write("源串长度："+str1.length);
+  document.write("<br />目的串长度："+eg1.length);
+}
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

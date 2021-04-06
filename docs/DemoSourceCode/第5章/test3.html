@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#box{
+	position:absolute;
+	top:100px;
+	left:100px;
+	animation:myAnimal 4s ease-in infinite;
+}
+@keyframes myAnimal{
+  0%{
+	  transform:rotateX(1deg);
+  }
+  50%{
+	  transform:rotateX(180deg) scale(1.5);
+  }
+  100%{
+	  transform:rotateX(360deg);
+	  
+  }
+}
+</style>
+</head>
+
+<body>
+<div id="box">
+  <img src="images/0.jpg">
+</div>
+</body>
+</html>

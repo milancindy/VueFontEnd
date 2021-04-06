@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>计算属性与计算方法的区别</title>
+		<script src="js/vue.min.js"></script>
+	
+</head>
+	<body>
+	    <div id="app">
+				长度：<input v-model="length" type="text" /><br /> 
+				宽度：<input v-model="width" type="text" /><br /> 
+				面积：{{areas}}<br />
+				<button @click="add()">计算方法</button> 和的值为：{{num}}
+		</div>
+		
+			<script type="text/javascript" src="lib/vue-2.4.0.js"></script>
+			<script>
+				var vm = new Vue({
+					el: '#app',
+					data: {
+						length: '',
+						width: '',
+						num: ''
+					},
+					computed: {
+						areas: function() {
+							let areas = 0
+							areas = this.length * this.width
+							return areas
+						}
+					},
+					methods: {
+						add: function() {
+							this.num = parseInt(this.length) + parseInt(this.width)
+						},
+					}
+				})
+			</script>
+	</body>
+</html>

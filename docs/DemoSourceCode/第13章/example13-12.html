@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Vue计算属性</title>
+		<script src="js/vue.min.js"></script>
+	
+</head>
+	<body>
+		<div id="prices">
+			<table border="1" align="center" width="400px">
+			  <caption><h2>购物车</h2></caption>
+			  <tr align="center" >
+			   <td>货名</td>
+			   <td>单价</td>
+			   <td>数量</td>
+			   <td>合计</td>
+			  </tr>
+			  <tr align="center" v-for="(user) in package1">
+			   <td>{{user.name}}</td>
+			   <td>{{user.price}}</td>
+			   <td>{{user.count}}</td>
+			   <td>{{user.price*user.count}}</td>
+			   
+			  </tr>
+			  <tr align="center" >
+			   <td>总价</td>
+			   <td  colspan="3">{{prices}}</td>
+			  </tr>
+		</div>
+		 <script>
+		       // <!--购物车总价-->
+		        var prices = new Vue({
+		            el: "#prices",
+		            data: {
+		                package1: [
+		                {
+		                    name: "华为mate20pro",
+		                    price: 4566,
+		                    count: 2
+		                },
+		                {
+		                    name: "华为p30",
+		                    price: 4166,
+		                    count: 3
+		                },
+		                {
+		                    name: "苹果X",
+		                    price: 5200,
+		                    count: 8
+		                },
+		                {
+		                    name: "OPPO",
+		                    price: 2180,
+		                    count: 4
+		                },
+		                ]
+		            },
+		            computed: {
+		                prices: function () {
+		                    var prices = 0;
+		                    for (var i = 0; i < this.package1.length; i++) {
+		                        prices += this.package1[i].price * this.package1[i].count;
+		                    }
+		                    return prices;
+		                }
+		            }
+		        })
+		 </script>
+	</body>
+</html>

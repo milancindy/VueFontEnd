@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<title>Vue组件切换</title>
+		<script src="js/vue.min.js"></script>
+	</head>
+	<body>
+	  <div id="app">
+		选择需要切换的组件：
+		<input type="radio" name="change" v-model="tab" value="myCom1"  checked=""/>1号
+		<input type="radio" name="change" v-model="tab" value="myCom2" />2号
+		<keep-alive>
+			<component :is="tab"></component>
+		</keep-alive>
+	  </div>
+	 <template id="com1">
+	     <p> {{title}}</p>
+	 </template>
+	 <template id="com2">
+	     <p> {{title}}</p>
+	 </template>
+　　<script>
+	   Vue.component('myCom1',{
+	   	template:"#com1",
+		data(){
+		    return {
+		        title:'子组件1号',
+		    }
+		 }
+	   })
+	   Vue.component('myCom2',{
+	   	template:"#com2",
+	   		data(){
+	   		    return {
+	   		        title:'子组件2号',
+	   		    }
+	   		 }
+	   })
+	    var vm=new Vue({
+	      el:'#app',
+	      data:{
+			  tab:'myCom1'
+		  },
+	      methods:{}
+	    });
+	  </script>
+	</body>
+</html>

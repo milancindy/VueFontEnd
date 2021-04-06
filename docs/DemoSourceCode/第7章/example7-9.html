@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>正则表达式test方法</title>
+<script>
+window.onload=function(){
+ var myBtn=document.getElementById("btn");
+ myBtn.onclick=function(){
+	 //获取文本框中用户输入Email的信息 
+ var objStr=document.getElementById("email").value; 
+ //设置匹配Email的正则表达式 
+ var rgExp=/^\w+@(\w+[.])*\w+$/; 
+ //如果判断字符串中是否存在匹配内容，如果存在提示正确信息，否则返回错误 
+ if(rgExp.test(objStr)){ 
+	alert("该Email地址是合法的!"); 
+  }else{ 
+   alert("该Email地址是非法的!"); 
+  } 
+ } 
+}
+</script>
+</head>
+<body>
+<br><br><br><br><br><br><br>
+请输入Email地址： 
+<input type="text" id="email">
+<input type="button" value="检测合法性" id="btn">
+
+</body>
+<html>

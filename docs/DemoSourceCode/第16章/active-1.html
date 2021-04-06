@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link href="./css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/vue.min.js"></script>
+		<style>
+			#app{
+				margin: 50px auto;
+			}
+			#app ul{
+				list-style: none;
+				width: 550px;
+			}
+			#app ul #screen{
+				text-align: center;
+				letter-spacing: 30px;
+			}
+			.seat{
+				float:left;
+				width: 30px;
+				height: 30px;
+				background-color: bisque;
+				margin: 5px 10px;
+				cursor: pointer;
+				list-style: none;
+			}
+			.seatActive{
+				background: url(img/bg.png) 1px 0px;
+			}
+			.seatSpace{
+				background: url(img/bg.png) 1px -29px;
+			}
+			.seatNouse{
+				background: url(img/bg.png) 1px -56px;
+			}
+			.seatNo{
+				background: url(img/bg.png) 1px -84px;
+			}
+			.notice{
+				float: left;
+				height: 30px;
+				line-height: 30px;
+				margin-right: 70px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container" id="app">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="row">
+						<!--左上半部分：座位行-->
+						<ul>
+							<li id="screen">
+								<h1>屏幕</h1>
+							</li>
+							<hr>
+							<li class="seat" v-for="(item,index) in seatflag"
+							:key="index" 
+							:class="{'seatNo':seatflag[index]==-1,
+									'seatSpace':seatflag[index]==0,
+									'seatActive':seatflag[index]==1,
+									'seatNouse':seatflag[index]==2
+									
+							}"
+							>
+								
+							</li>
+						</ul>
+					</div>
+					<div class="row">
+						<!--左下半部分：座位提示-->
+						<hr>
+						<li class="seat seatActive"> </li>
+						<span class="notice">已先座位</span>
+						<li class="seat seatSpace"> </li>
+						<span class="notice">可选座位</span>
+						<li class="seat seatNouse"> </li>
+						<span class="notice">售出座位</span>
+						
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<!--右上半部分：电影信息行-->
+					</div>
+					<div class="row">
+						<!--右下半部分：影票购买提示-->
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<script>
+			var vm=new Vue({
+				el:'#app',
+				data:{
+					seatflag:[
+						0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+						0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+						0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+						0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+						0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+						0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+						0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+						0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+						0, 0, 0, 0, 2, 2, 0, 0, 0, 0,
+						0, 0, 0, 2, 2, 0, 2, 2, 0, 0,
+						-1, 0, 0, 0, 0, 0, 0, 0, 0, -1,
+						-1, -1, 0, 0, 0, 0, 0, 0, -1, -1,
+					]
+				}
+			})
+		</script>
+	</body>
+</html>

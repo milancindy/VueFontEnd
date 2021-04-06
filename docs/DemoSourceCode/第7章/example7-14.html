@@ -1,0 +1,51 @@
+﻿<html>
+<head>
+<meta charset="UTF-8">
+<title>省市二级联动</title>
+<script> 
+window.onload=function(){
+ var selectPro=""
+ var proArr=new Array("河南","湖北","湖南");
+ var arr = new  Array();
+ arr[0]="郑州,开封,洛阳,安阳,鹤壁,新乡,焦作,濮阳,许昌,漯河" 
+ arr[1]="武汉,宜昌,荆州,襄樊,黄石,荆门,黄冈,十堰,恩施,潜江" 
+ arr[2]="长沙,常德,株洲,湘潭,衡阳,岳阳,邵阳,益阳,娄底,怀化" 
+ var city = document.getElementById("city");
+ var province=document.getElementById("province");
+ var result=document.getElementById("result");
+ var cityArr = arr[0].split(",");
+ initCity(0);
+ function initCity(index){
+	 var cityArr = arr[index].split(","); 
+	 for(var i=0;i<cityArr.length;i++)
+	 {
+	   city[i]=new Option(cityArr[i],cityArr[i]);
+	 }
+	 selectPro=proArr[province.value];
+	 result.innerHTML=selectPro+"省"+cityArr[0]+"市";
+ }
+ province.onchange=function(){    
+    var index = province.selectedIndex;
+    //将城市数组中的值填充到城市下拉框中
+	initCity(index);
+ }
+ city.onchange=function(){
+	 result.innerHTML=selectPro+"省"+city.value+"市";
+ }
+}
+</script>
+
+</head> 
+<body > 
+请您选择省份：
+<select id="province" size="1"> 
+<option value="0">河南</option> 
+<option value="1" >湖北</option> 
+<option value="2" >湖南</option> 
+</select><br>
+请您选择城市：
+<select id="city" style="width:60px"> 
+</select> <br>
+您选择的结果是：<span id="result" style="color:red"></span>
+</body>
+</html>

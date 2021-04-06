@@ -1,0 +1,81 @@
+<html>
+<head>
+<style>
+*{margin:0px; padding:0px;}
+#box{ border:1px solid red; width:520px; height:280px; margin:0px auto; position:relative; overflow:hidden;}
+img{ margin:0px auto;}
+#dm1{position:absolute; top:15px; left:520px; font-size:20px; width:200px; color:white; }
+#dm2{position:absolute; top:35px; left:520px; font-size:20px; width:200px; }
+#dm3{position:absolute; top:55px; left:520px; font-size:20px; width:200px; }
+
+</style>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+$(document).ready(function(e) {
+	dm1Arr=new Array("hello","您好！","放马过来","林丹，加油","我们是冠军！")
+	dm2Arr=new Array("体育精神！","输了就输了","天才，天才！","努力","明白明白！")
+	dm3Arr=new Array("中国队加油","好样的，加油","we are Win！","真的吗？","OK！")
+    index1=0;
+	index2=0;
+	index3=0;
+	setTimeout(dispDm1,1000);
+	setTimeout(dispDm2,500);
+	setTimeout(dispDm3,700);
+	function dispDm1(){
+		index1++;
+		index1%=6;
+		$("#dm1").animate({left:'-200px'},3000,"linear",function(){
+			randTime=Math.floor(Math.random()*200)
+			$("#dm1").css("left","520px")
+			$("#dm1").html(dm1Arr[index1]);
+			setTimeout(dispDm1,randTime);
+		})
+	}
+	function dispDm2(){
+		index2++;
+		index2%=6;
+		$("#dm2").animate({left:'-200px'},4000,"linear",function(){
+			randTime=Math.floor(Math.random()*500)
+			$("#dm2").css("left","520px")
+			$("#dm2").html(dm2Arr[index2]);
+			setTimeout(dispDm2,randTime);
+		})
+	}
+	function dispDm3(){
+		index3++;
+		index3%=6;
+		$("#dm3").animate({left:'-200px'},3500,"linear",function(){
+			randTime=Math.floor(Math.random()*350)
+			$("#dm3").css("left","520px")
+			$("#dm3").html(dm3Arr[index3]);
+			setTimeout(dispDm3,randTime);
+		})
+	}
+	/*function dispDm1(activeObj){
+		index++;
+		index%=6;
+		$("#dm1").animate({left:'-200px'},5000,"linear",function(){
+			randTime=Math.floor(Math.random()*200)
+			$("#dm1").css("left","520px")
+			$("#dm1").html(dm1Arr[index]);
+			setTimeout(dispDm1,randTime);
+		})
+        
+	}*/
+	
+});
+
+</script>
+
+</head>
+<body>
+<div id="box">
+<img src="images/1.jpg">
+<div id="dm1">hello</div>
+<div id="dm2">林丹，加油</div>
+<div id="dm3">放马过来</div>
+</div>
+
+
+</body>
+<html>

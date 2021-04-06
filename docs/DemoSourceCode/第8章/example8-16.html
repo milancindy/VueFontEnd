@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>邮件列表管理</title>
+<style>
+*{margin:0px; padding:0px;}
+#box{width:400px;margin:0px auto;}
+</style>
+<script src="js/jquery-3.2.0.min.js"></script>
+<script>
+$(function(){
+	$("#selectBtn").click(function(){				//全选
+	  $("input[name=select]").prop("checked",true)
+	});
+	$("#selectCancle").click(function(){			//取消选择
+	  $("input[name=select]").prop("checked",false)
+	});
+	$("#notSelect").click(function(){				//反选
+	  $("input[name=select]").each(function(index, element) {
+		$(this).prop("checked",!$(this).prop("checked"))  
+	  })
+	});
+	$("#delBtn").click(function(){					//删除选中邮件项
+		$("input[name=select]").each(function(index, element) {
+            if($(this).prop("checked"))
+			   $(this).parent().parent().remove();
+        	
+		});
+			
+	})
+})
+</script>
+</head>
+
+<body>
+<div id="box">
+ <p>收件箱</p>
+ <table width="400" border="1" >
+  <tr>
+    <td>状态</td>
+    <td>发件人</td>
+    <td>主题</td>
+  </tr>
+  <tr>
+    <td><input name="select" type="checkbox" value="select" ></td>
+    <td>王者归来</td>
+    <td>羽毛球服装</td>
+  </tr>
+    <tr>
+    <td><input name="select" type="checkbox" value="select" ></td>
+    <td>天下</td>
+    <td>明天会下雨吗？</td>
+  </tr>
+    <tr>
+    <td><input name="select" type="checkbox" value="select" ></td>
+    <td>沧海</td>
+    <td>轮椅什么时候还您？</td>
+  </tr>
+    <tr>
+    <td><input name="select" type="checkbox" value="select" ></td>
+    <td>王者归来</td>
+    <td>明天约了场比赛</td>
+  </tr>
+</table>
+<button id="selectBtn">全选</button>
+<button id="selectCancle">取消</button>
+<button id="notSelect">反选</button>
+<button id="delBtn">删除</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	<title>第一个Vue程序</title>
+	<script src="js/vue.min.js"></script>
+	</head>
+	<body>
+			<div id="app">
+				商品名称：<input type="text" name="name" v-model="name" />
+				商品价格：<input type="text" name="price" v-model="price" />
+				<button @click="add()">增加商品</button>
+				<table border="1px">
+					<template v-for="(v,index) in goods">
+						<tr style="background-color: orange;" v-if="index==0">
+							<td v-for="t in title">{{t}}</td>
+						</tr>
+						<tr>
+							<td>{{index+1}}</td>
+							<td>{{v.name}}</td>
+							<td>{{v.price}}</td>
+							<td><button @click="del(index)">删除</span></td>
+						</tr>
+					</template>
+				</table>
+			</div>
+		</body>
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					title:[
+						'商品序号',
+						'商品名称',
+						'商品价格',
+						'删除商品'
+					],
+					goods:[
+						{name:'zhangsan',price:'18'},
+						{name:'wmx',price:'20'}
+					],
+					name:'',
+					price:''
+				},
+				methods:{
+					add:function(){
+						var str = {name:this.name,price:this.price};
+						this.goods.unshift(str);
+					},
+					del:function(i){
+						this.goods.splice(i,1);
+					}
+				}
+			});
+		</script>
+	</html>
+	

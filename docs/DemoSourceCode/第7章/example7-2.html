@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>正则表达式</title>
+<script>
+window.onload=function(){
+  var pattern=/[A-Za-z]*is+/g;
+  var str="This is test regex .";
+  var strArr=str.match(pattern);
+  for(i=0;i<strArr.length;i++){
+	document.write("匹配的第"+i+"个数字是："+strArr[i]+"<br>"); 
+  }
+}
+</script>
+</head>
+<body>
+</body>
+<html>

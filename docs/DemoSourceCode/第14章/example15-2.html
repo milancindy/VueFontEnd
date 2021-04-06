@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="js/vue.min.js"></script>
+    <style>
+        #app ul{
+            list-style: none;
+        }
+        #app ul li{
+            width: 450px;
+        }
+        #app ul li ul li{
+            float: left;
+            width: 30px;
+            height: 20px;
+            background-color: bisque;
+            margin: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(itemRow, indexRow) in 9" :key="indexRow">
+                <ul >
+                    <li v-for="(itemCol, indexCol) in 9" :key="indexCol">
+                        {{indexRow}}行{{indexCol}}列
+                    </li>
+                </ul>
+                <br>
+            </li>
+
+        </ul>
+        你单击了：{{info}}
+    </div>
+    
+
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                info:"hello"
+            }
+      
+       
+        });
+       
+    </script>
+
+</body>
+
+</html>

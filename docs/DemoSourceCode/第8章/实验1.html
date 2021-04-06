@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<lang="en">
+
+    <head>
+        <script src="js/jquery-3.2.0.min.js"></script>
+        <script >
+        $(function () {
+    $('.tab ul li').mouseover(function () {
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.tab-content>div:eq(' + $(this).index() + ')').css('display', 'block').siblings().css('display', 'none');
+    });
+    $('#agree').change(function () {
+        // console.log(!$(this).attr('ch?ecked'));
+        $('#nextstep').prop('disabled',!$(this).prop('checked'));//说明在chrome浏览器中，不能用click事件来修改disabled属性值，要不在浏览器中不能呈现效果。
+    });
+})
+
+        </script>
+        <style>
+		* {
+    margin: 0px;
+    padding: 0px
+}
+
+.tab {
+    width: 99%;
+    margin: 20px auto;
+    border: 5px solid #cccccc;
+}
+
+.tab ul {
+    height: 40px;
+    line-height: 40px;
+}
+.tab ul li{
+    list-style: none;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    width: 33%;
+    text-align: center;
+    background-color: dodgerblue;
+    margin-right: 2px;
+    cursor: pointer;
+    font-family: 华文琥珀;
+    font: bold;
+}
+.tab ul li.active{
+    background-color: aqua;
+}
+.tab ul li:first-child{
+    margin-left: 5px;
+}
+.tab ul li:last-child{
+    margin-right: 0px;
+}
+
+
+.tab-content div{
+    display: none;
+    height: 500px;
+}
+.local-new{
+    padding: 20px;
+}
+fieldset{
+    margin: 50px;
+    padding: 20px;
+}
+
+input[type='text']:focus{
+    background-color: lightyellow;
+}
+
+input[type='radio']:checked+label{
+    font-weight: bold;
+}
+
+#nextstep :disabled{
+    background-color: #ccc;
+}
+
+#nextstep :enabled{
+    font-weight: bold;
+    font-style: italic;
+}
+
+p:lang(zh-cn){
+    font-family: 微软雅黑；
+}
+
+p:lang(us-en){
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+		
+        
+        </style>
+        </head> <body>
+        <div class="tab">
+            <ul>
+                <li class="active">国内新闻</li>
+                <li>国际新闻</li>
+                <li>经济新闻</li>
+            </ul>
+            <div class="tab-content">
+                <div class="local-new" style="display:block">
+                    <fieldset>
+                        <legend>登录</legend>
+                        姓名：<input type="text"><br><br>
+                        性别:<input type="radio" name="sex" id="man"><label for="man">男</label>
+                        <input type="radio" name="sex" id="woman"><label for="woman">女</label>
+                        <input type="radio" name="sex" id="secrect"><label for="secrect">保密</label><br><br>
+                        <input type="checkbox" name="" id="agree"><label for="agree">我同意以上协议</label><br><br>
+                        <input type="button" id="prestep" value="上一步">
+                        <input type="button" id="nextstep" value="下一步" disabled>
+                    </fieldset>
+                </div>
+                <div class="international-new" style="display:block">国际新闻</div>
+                <div class="ecology-new" style="display:block">经济新闻</div>
+            </div>
+        </div>
+        </body>
+
+        </html>

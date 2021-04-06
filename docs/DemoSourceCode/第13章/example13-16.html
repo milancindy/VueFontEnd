@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>全局过滤器</title>
+		<script src="js/vue.min.js"></script>
+		
+</head>
+	<body>
+	 <div id="app">
+		<h2>{{8 | number}}</h2>
+		<h2>{{18 | number}}</h2>
+		<h2>{{8.12345 | numberFormat(3)}}</h2>
+		<h2>{{18.1 | numberFormat(4)}}</h2>
+		
+		
+	 </div>
+	 <script type="text/javascript">
+		Vue.filter('number',function(value){
+			return value<10?'0'+value:value
+		})
+		Vue.filter('numberFormat',function(value,n){
+			return value.toFixed(n)
+		})
+	    var app = new Vue({
+	      el: '#app',
+	      data: {
+	       message: 'Hello Vue!'
+	      },
+		})
+	 </script>
+	</body>
+</html>

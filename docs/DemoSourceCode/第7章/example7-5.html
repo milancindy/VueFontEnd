@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>后向引用正则表达式</title>
+<script>
+window.onload=function(){
+  var numberArr=new Array("1212","1234","1221","1231");
+  //var pattern=/(\d)(\d)\2\1|(\d)(\d)\3\4/;
+  var pattern=/(?<n1>\d)(?<n2>\d)\k<n2>\k<n1>|(?<m1>\d)(?<m2>\d)\k<m1>\k<m2>/;
+  document.write("数字列表如下：<br>");
+  for(i=0;i<numberArr.length;i++){
+	document.write(numberArr[i]+"<br>");
+  }
+  document.write("<br>其中符合abba或abab的列表如下：<br>");
+  for(i=0;i<numberArr.length;i++){
+	if(pattern.test(numberArr[i]))
+	   document.write(numberArr[i]+"<br>");
+  }
+
+}
+</script>
+</head>
+<body>
+</body>
+<html>

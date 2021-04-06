@@ -1,0 +1,36 @@
+<!DOCTYPE html> 
+<html> 
+ <head> 
+  <title>Bootstrap 警告框插件</title> 
+  <meta charset="utf-8"> 
+  <link rel="stylesheet" href="css/bootstrap.min.css" rel="external nofollow" >  
+  <script src="js/jquery-1.11.2.min.js"></script> 
+  <script src="js/bootstrap.min.js"></script> 
+  <style> 
+   body{ 
+    font-size:24px; 
+      
+   } 
+  </style> 
+  <script>
+	  $(function(){
+		  $("#myClose").click(function(){
+			  $(".alert").alert("close");
+		  })
+		  
+	  })
+  </script>
+ </head> 
+ <body> 
+  <div class="container"> 
+	  <div id="myAlert" class="alert alert-danger">
+		<a  href="#"  class="close" data-dismiss="alert" >&times;</a>
+		  
+		<p>用户名与密码不正确</p>
+	  </div>
+	  <a  href="#" class="btn btn-info" data-dismiss="alert" data-target="#myAlert">样式类关闭</a>
+	  <a  href="#" class="btn btn-info" id="myClose"> JavaScript脚本关闭</a>
+  </div> 
+   
+ </body> 
+</html>

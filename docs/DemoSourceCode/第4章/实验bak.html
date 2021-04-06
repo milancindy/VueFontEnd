@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS两栏布局</title>
+</head>
+<style>
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+.container{
+    width: 410px;
+    height: 200px;
+}
+
+.left{
+    background-color: yellow; 
+    float: left;
+    height: 100%;
+    width:100px;
+}
+.right{
+    background-color: red; 
+    margin-left: 10px;
+	float: left;
+    height:100%;
+	width:300px;
+}
+.container::after{
+    content: '';
+    display: block;
+    visibility: hidden;
+    clear: both
+}
+
+</style>
+<body>
+    <div class=container>
+              
+        <div class=left>左分栏</div>
+        <div class=right>右分栏</div>
+    </div>
+</body>
+</html>

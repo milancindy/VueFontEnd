@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery修改元素属性</title>
+<script src="js/jquery-1.11.2.js"></script>
+<script>
+$(document).ready(function(){
+	var index=0;
+	setInterval(imgChange,1000);		//定时1秒钟改变一次图片
+	function imgChange(){
+		index=(index+1)%4;				//让索引值在0~3之间变化
+		$("#box img").attr("src","images/"+index+".jpg"); //修改img元素的src属性
+	}
+});
+</script>
+</head>
+<body>
+ <div id="box">
+   <img src="images/0.jpg">
+ </div>
+</body>
+</html>

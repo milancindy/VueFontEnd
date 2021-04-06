@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>实验</title>
+        <style type="text/css">
+		  *{
+			 
+			  padding:0px;
+			  
+			}
+		#contenter{
+			text-align:center;			
+			padding:15px;
+			width:800px;
+			height:500px;
+			border:1px solid #000;
+			position:relative;
+			
+		}
+		
+		#banner,#footer{
+			text-align:center;
+			border:1px solid #000;
+			background-color:#ffcc33;
+			width:800px;
+			height:50px;
+			clear:both;
+			margin:10px 0px;
+		}
+		#main{
+			width: 800px;
+    		height: 300px;
+			background-color:#9CF;
+			
+		}
+		#content{
+			text-align:center;
+			width:580px;
+			height:100%;
+			border:1px solid #000;
+			float:left;		
+		}
+		#links{
+			text-align:center;
+			border:1px solid #000;
+			width:205px;
+			height:100%;
+			margin-left:10px;
+			float:left;	
+			
+		}
+		#main::after{
+			content: '';
+			display: block;
+			visibility: hidden;
+			clear: both;
+		}
+    	</style>
+    </head>
+    <body>
+      <div id="contenter">#contenter
+        <div id="banner">#banner</div>
+        <div id="main">
+            <div id="content">#content</div>
+            <div id="links">#links</div>
+        </div>
+        <div id="footer">#footer</div>
+        
+      </div>
+        
+    </body>
+</html>

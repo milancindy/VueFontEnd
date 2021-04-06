@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>警告与进度条</title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		
+	</head>
+	<body>
+	<div class="container">
+	<div class="progress progress-striped active">
+	    <div class="progress-bar progress-bar-success" role="progressbar"
+	         aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+	         style="width: 40%;">
+	        <span class="sr-only">40% 完成</span>
+	    </div>
+	</div>
+	<div class="alert alert-warning alert-dismissible" role="alert">
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	  <strong>警告!</strong>当前完成了40%，
+	  <a href="#" class="alert-link">取消</a>
+	</div>
+	</div>
+	</body>
+</html>

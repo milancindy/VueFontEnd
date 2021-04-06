@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SetTimeout方法</title>
+<script>
+window.onload=function(){
+	dispTime=document.getElementById("dispTime")
+	dispTime.value="hello";
+	interval=1000;			//设定时间1秒
+
+	function change()  {
+		var today = new Date();		//获取当前时间
+		dispTime.innerHTML = two(today.getHours()) + ":" 
+		dispTime.innerHTML+= two(today.getMinutes()) + ":" 
+		dispTime.innerHTML+= two(today.getSeconds());
+		timerID=window.setTimeout(change,interval);
+	}
+	function two(x){
+		return(x>=10?x:"0"+x);
+	}
+	change()
+}
+</script>
+</head>
+
+<body>
+<label id="dispTime"></label>
+</body>
+</html>

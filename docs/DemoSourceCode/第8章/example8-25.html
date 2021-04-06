@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>animate方法自定义动画</title>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script>
+$(function(){
+  $("button:eq(0)").click(function(){
+    $("#panel").animate({height:"150" }, 1000).animate({width:"300" },
+      1000).hide(2000).animate({height:"show", width:"show", opacity:"show" }, 1000).animate({height:"500"},
+      1000);
+  });
+  //stop([clearQueue][,gotoEnd]);
+　　//语法结构
+  $("button:eq(1)").click(function(){
+    $("#panel").stop();//停止当前动画，继续下一个动画
+  });
+  $("button:eq(2)").click(function(){
+    $("#panel").stop(true);//清除元素的所有动画
+  });
+  $("button:eq(3)").click(function(){
+    $("#panel").stop(false, true);//让当前动画直接到达末状态 ，继续下一个动画
+  });
+  $("button:eq(4)").click(function(){
+    $("#panel").stop(true, true);//清除元素的所有动画，让当前动画直接到达末状态
+  });
+})
+</script>
+</head>
+<body>
+<button>开始一连串动画</button>
+<button>stop()</button>
+<button>stop(true)</button>
+<button>stop(false,true)</button>
+<button>stop(true,true)</button>
+<div id="panel">
+  <h5 class="head">什么是jQuery?</h5>
+  <div class="content">
+    jQuery。
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery修改元素内容</title>
+<script src="js/jquery-1.11.2.js"></script>
+<script>
+$(document).ready(function(){
+	$("button").click(function(){
+		var newContent=$("#userInput").val();	//val()获取表单元素内容
+		$("ul li:first").html(newContent);		//html()设置选中元素内容
+		$("ul li:last").text(newContent);		//text()设置选中元素内容
+			
+	});
+});
+</script>
+</head>
+<body>
+ <input type="text" id="userInput">
+ <button>修改HTML元素内容</button>
+ <ul>
+   <li>音乐</li>
+   <li>羽毛球</li>
+   <li>足球</li>
+   <li>篮球</li>
+ </ul>
+</body>
+</html>

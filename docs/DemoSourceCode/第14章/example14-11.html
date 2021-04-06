@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Vue使用第三方样式类库实现过渡</title>
+		<link rel="stylesheet" href="./css/animate.min.css">
+		<script src="js/vue.min.js"></script>
+	</head>
+	<body>
+	 <div id="test">
+		<input type="button" value="togle" @click="flag=!flag" />
+		<transition 
+		　　enter-active-class="animated bounceIn" 
+		　　leave-active-class="animated bounceOut"
+		    :duration={enter:400,leave:200}>
+			<h3 v-if="flag">{{msg}}</h3>
+		</transition>
+	 </div>
+		
+		<script>
+			var vm=new Vue({
+				el:'#test',
+				data:{
+					msg:'Hello Vue World!' ,
+					flag:false,
+				}
+			});
+		</script>
+	</body>
+	</html>

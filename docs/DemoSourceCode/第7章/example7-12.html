@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>正则表达式</title>
+<script>
+window.onload=function(){
+ var re=/(\d)(\d)\d\2\1/;	//设置正则表达式 
+ var ostr="253212328";		//所要匹配的字符串，字符串第一个位置从0开始 
+ var pos=ostr.search(re);//进行字符串匹配 
+ if(pos==-1){
+  document.write("没有找到任何匹配"); 
+ } 
+ else{ 
+	arr=ostr.match(re);//进行match找出匹配的内容 
+	document.write("在位置"+pos+"，找到第一个匹配，匹配内容为："); 
+	document.write(arr[0]);//输出匹配的内容 
+ } 
+}
+</script>
+</head>
+<body>
+</body>
+</html>

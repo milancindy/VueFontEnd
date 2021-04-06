@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Vue 数据绑定——表达式</title>
+		<script src="js/vue.min.js"></script>
+	<style>
+			[v-cloak]{
+				display: none;
+			}
+			.css{
+				color: red;
+			}
+		</style>
+</head>
+		<body>
+			<div id="domo" v-cloak>
+				<p style="color: red;">v-html 标签有效</p>
+				<p v-html="name"></p>
+				<p style="color: red;">v-text 标签无效</p>
+				<p v-text="name"></p>
+				<hr />
+				<p style="color: red;">style</p>
+				<p :style="objCss">使用style从数据拿视图，v-bind====:</p>
+				<p style="color: red;">v-bind可以简写成： ,动态地绑定一个或多个特性，或一个组件 prop 到表达式。</p>
+				<img v-bind:src='src'>v-bind可以省</img>
+				<p :style="{
+					color: 'yellow',
+					fontSize: '11px'
+				}">自己改,数据</p>
+				<p :class="{
+					'css':!bool
+				}">我不是红色的</p>
+				<hr />
+				<p style="color: red">v-show</p>
+				<p v-show="bool">v-show可以控制出现或者隐藏</p>
+				<button @click='showClick'>v-on:click====@click点击，隐藏</button>
+				<hr />
+				<p style="color: red">v-model 双向绑定！</p>
+				<input v-model="name"></input>
+				<hr />
+				<p style="color: red">v-for</p>
+				<ul>
+					<li v-for="a in arr" v-html="'姓名：'+a.name+'；年龄:'+a.age"></li>
+				</ul>
+				<p v-for="a in arr" v-html="'姓名：'+a.name+'；年龄:'+a.age"></p>
+				<table v-for="a in arr">
+					<tr><td>{{a.name}}</td><td>{{a.age}}</td><td><img v-for="i in a.imgs" :src="i" /></td></tr>
+				</table>
+				<hr />
+				<p style="color: red">v-if</p>
+				<p v-if="type==='A'" v-text="name1"></p>
+				<div v-else-if="type==='B'" v-text="name2"></div>
+				<div v-else-if="type==='C'" v-text="name3"></div>
+				<div v-else="type==='D'" v-text="name4"></div>
+				<hr />
+				<p style="color: red">v-pre 这是一个跳过这个元素和它的子元素的编译过程</p>
+				<p><span v-pre>{{ 被包括的vue语言全都无效化！！ }}</span></p>
+			</div>
+			<script type="text/javascript" src="js/vue.js"></script>
+			<script>
+				new Vue({
+					el: "#domo",
+					data: {
+						name: '<em>我爱你<span>而</span>你爱他</em>',
+						src:'img/发生的事_画板 1.png',
+						objCss:{
+							color: 'blue',
+							fontSize: '28px'
+						},
+						bool:false,
+						arr: [{
+								name: "大哥",
+								age: 18,
+								imgs: ['img/image (24).gif']
+							}, {
+								name: "二哥",
+								age: 17,
+								imgs: ['img/image (25).gif']
+							}, {
+								name: "三弟",
+								age: 19,
+								imgs: ['img/image (26).gif']
+							}, {
+								name: "四弟",
+								age: 20,
+								imgs: ['img/image (27).gif']
+							}],
+						name1: "lemon",
+						name2: "enenenen",
+						name3: "DASDA",
+						name4: "eDASDASF",
+						type:'B',
+					},
+					methods:{
+						showClick(){
+							this.name="ddddd",
+							this.bool=!this.bool,
+							alert("取消隐藏")
+							this.type='D'
+						}
+					},
+					
+					
+				})
+			</script>
+		</body>
+	</html>

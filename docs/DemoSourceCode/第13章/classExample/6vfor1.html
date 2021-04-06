@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js"></script>
+		
+	</head>
+	<body>
+		<div id="app">
+			<h2 v-for="(item,index) in msgArr">
+				{{index+1}}:&nbsp;&nbsp;{{item}}<br>
+			</h2>
+			<h2 v-for="(item,key) in objArr">
+				{{key}}:&nbsp;&nbsp;{{item.name}}&nbsp;&nbsp;{{item.age}}<br>
+			</h2>
+			<h2 v-for="(item,key) in mySelf">
+				{{key}}:&nbsp;&nbsp;{{item}}<br>
+			</h2>
+		</div>
+		<script>
+			var vm=new Vue({
+				el:'#app',
+				
+				data:{
+					msgArr:['lb','wq','lyd'],
+					objArr:[
+						{'name':'lb',age:25},
+						{'name':'wq',age:18},
+						{'name':'lyd',age:17},
+					],
+					mySelf:{
+						'name':'lb',age:25
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

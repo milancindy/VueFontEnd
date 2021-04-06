@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<mycom></mycom>
+			<mycom></mycom>
+			<lbcom></lbcom>
+	
+		</div>
+		<template id="temp1">
+		  <div>
+			<input type="button" value="加1" @click="inc">
+			<h1>{{count}},hello</h1>
+		  </div>
+		</template>
+		<script>
+			
+			Vue.component('mycom',{
+				template:'#temp1',
+				data:function(){
+					return({count:88})
+				},
+				methods:{
+					inc:function(){
+						this.count++;
+					}
+				}
+			})		
+			var vm=new Vue({
+				el:'#app',
+				data:{},
+				components:{
+					lbcom:{
+						template:'<h1>hello subComponent</h1>'
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

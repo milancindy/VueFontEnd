@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js"></script>
+		
+	</head>
+	<body>
+		
+		<div id="app">
+			1{{msg}}<br>
+			<p v-text="msg">2</p>
+			<p v-html="msg">3</p>
+		</div>
+		<script>
+			var vm=new Vue({
+				el:'#app',
+				
+				data:{
+					msg:'<h2>Hello</h2> Vue World!',
+					
+				}
+			})
+		</script>
+	</body>
+</html>

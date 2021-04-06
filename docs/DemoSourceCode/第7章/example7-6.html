@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>忽略大小写修饰符</title>
+<script>
+window.onload=function(){
+  var str="LiNuxand php,aaaLINUXaa and linux and lamp";
+  var pattern=/linux/ig;
+  document.write("源串如下：<br>"+str);
+  strArr=str.match(pattern);
+  document.write("<br>找到的linux子串如下：<br>");
+  for(i=0;i<strArr.length;i++){
+	   document.write(strArr[i]+"<br>");
+  }
+}
+</script>
+</head>
+<body>
+</body>
+<html>

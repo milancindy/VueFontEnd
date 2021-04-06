@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>正则表达式</title>
+<script>
+window.onload=function(){
+  var mobileArr=new Array("13312345678","13712345678","18012345678","189123456789","1531234567","181123456789");
+  var pattern=/^1[35]3\d{8}|18[019]\d{8}$/;
+  document.write("手机号列表如下：<br>");
+  for(i=0;i<mobileArr.length;i++){
+	document.write(mobileArr[i]+"<br>");
+  }
+  document.write("<br>符合电信手机号规则的列表如下：<br>");
+  for(i=0;i<mobileArr.length;i++){
+	if(pattern.test(mobileArr[i]))
+	   document.write(mobileArr[i]+"<br>");
+  }
+
+}
+</script>
+</head>
+<body>
+</body>
+<html>

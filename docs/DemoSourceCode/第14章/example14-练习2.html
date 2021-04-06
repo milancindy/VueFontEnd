@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	<title>练习</title>
+	<script src="js/vue.min.js"></script>
+	<style>
+	    /* div的初始状态*/
+	    .box {
+	        width:100px;
+	        height: 200px;
+	        background-color:greenyellow;
+	    }
+		    /**
+	    * 定义进入动画和退出动画的过程
+	    * 代表关注的是height的变化，动画的时间是5
+	    */
+	    .fade-enter-active, .fade-leave-active {
+	        transition: height 5s;
+	    }
+	    /* 定义进入动画的初始状态*/
+	    .fade-enter {
+	        height: 0;
+	    }
+	
+	    /* 定义进入动画的结束状态*/
+	    .fade-enter-to {
+	        height: 200px;
+	    }
+	
+	    /* 定义离开动画的初始状态*/
+	    .fade-leave {
+	        height: 200px;
+	    }
+	
+	    /* 定义离开动画的结束状态*/
+	    .fade-leave-to {
+	        height: 0;
+	    }
+	</style>
+	</head>
+	<body>
+		<div id="app">
+			<button @click="myBtn">显示/隐藏切换</button>
+			<!--一个命名为fade的<transition>标签包裹着类名为h的<div>-->
+			<transition name="fade">
+			    <div class="box" v-if="show"></div>
+			</transition>
+		</div>
+			
+		</body>
+		<script>
+				var vm=new Vue({
+					el:'#app',
+					data:{
+						show:true
+					},
+					methods:{
+						myBtn:function(){
+							this.show=!this.show
+						}
+					}
+				});	
+			</script>
+	</html>
+	

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js"></script>
+		
+	</head>
+	<body>
+		<div id="app">
+					<table border="1" align="center" width="80%">
+						<tr align="center">
+							<td>序号</td>
+							<td>姓名</td>
+							<td>年龄</td>
+						</tr>
+						<tr v-for="(item,key) in listArr" align="center">
+							<td>{{key+1}}</td>
+							<td>{{item.name}}</td>
+							<td>{{item.age}}</td>
+						</tr>
+						<tr align="center">
+							<td colspan="2">平均年龄</td>
+							
+							<td>{{averAge}}</td>
+						</tr>
+					</table>
+				  </div>
+				<script>
+					var vm=new Vue({
+						el:'#app',
+						data:{
+							listArr:[
+								{name:'lb',age:22},
+								{name:'wq',age:20},
+								{name:'lyd',age:21},
+							]
+						},
+						computed:{
+							averAge:function(){
+								sum=0
+								for(i=0;i<this.listArr.length;i++){
+									sum+=this.listArr[i].age
+								}
+								return sum/this.listArr.length
+							}
+						}
+					})
+				</script>
+	</body>
+</html>

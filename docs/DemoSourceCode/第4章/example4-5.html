@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>绝对定位</title>
+<style>
+ #box{ height:200px; width:300px; margin:0 auto; background:grey;position:relative; }
+ #box p{
+	text-align:center;		/*设定文本居中对齐*/
+	border:5px solid blue;	/*设定边框线5像素、实心线，蓝色*/
+	width:100px;			/*设定宽度值100像素*/
+	margin:15px;			/*设定外边距15个像素*/
+	background:pink;
+  }
+ #box p.absolute{ background:yellow; position:absolute; top:10px; left:40px;}
+</style>
+</head>
+
+<body>
+  <div id="box">
+   	<p>第一段文字</p>
+	<p class="absolute">第二段文字</p>
+	<p>第三段文字</p>
+   
+  </div>
+</body>
+</html>

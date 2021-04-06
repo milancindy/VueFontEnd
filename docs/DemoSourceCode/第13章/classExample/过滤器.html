@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			{{msg | two}}<br>
+			{{msg | myFormat(2)}}
+		</div>
+		<script>
+			Vue.filter('two',function(value){
+				return value>9?value:'0'+value
+			})
+			Vue.filter('myFormat',function(value,n){
+				return value.toFixed(n)
+			})
+			
+			var vm=new Vue({
+				el:'#app',
+				data:{
+					msg:19.356
+				}
+				
+			})
+		</script>
+	</body>
+</html>

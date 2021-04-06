@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>v-bind</title>
+		<script src="js/vue.min.js"></script>
+	
+	</head>
+	<body>
+		<body>
+		    <div id="app">
+		        <img v-bind:src="path"/>
+		    </div>
+		    <script type="text/javascript">
+		        var vm = new Vue({
+		            el : "#app",
+		            data : {
+		                path : "img/logo.png"
+		            }
+		        });
+		    </script>
+		</body>
+	</body>
+	</html>

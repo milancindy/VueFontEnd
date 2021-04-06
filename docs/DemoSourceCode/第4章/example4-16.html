@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8" />
+	<title>多栏布局</title>
+	<style type="text/css">
+		/*将多个div块的共性单独抽出来然后列举，减少代码量*/
+		.header,.footer{
+			width:500px;
+			height:100px;
+			background:blue;
+		}
+		.main{
+			width:500px;
+			height:300px;
+		}
+		.left,.right{
+			width:100px;
+			height:300px;
+		}
+		.content-top,.content-bot{
+			width:300px;
+			height:150px;
+		}
+		/*开始修饰*/
+		.left{
+			background:#C9E143;
+			float:left;
+		}
+		.content-top{
+			background:#FF0000;
+		}
+		.content-bot{
+			background:#FFA500;
+		}
+		.content{
+			float:left;
+		}
+		.right{
+			background:black;
+			float:right;
+		}
+	</style>
+</head>
+<body>
+	<div class="header"></div>
+	<div class="main">
+		<div class="left"></div>
+		<div class="content">
+			<div class="content-top"></div>
+			<div class="content-bot"></div>
+		</div>
+		<div class="right"></div>		
+	</div>
+	<div class="footer"></div>
+</body>
+</html>

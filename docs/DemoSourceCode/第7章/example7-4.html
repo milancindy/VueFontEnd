@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>分组正则表达式</title>
+<script>
+window.onload=function(){
+  var ipArr=new Array("98.a.3.3","192.168.1.1","172.268.3.4","10-1-2-1");
+  var pattern=/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/;
+  document.write("地址列表如下：<br>");
+  for(i=0;i<ipArr.length;i++){
+	document.write(ipArr[i]+"<br>");
+  }
+  document.write("<br>其中的IP地址列表如下：<br>");
+  for(i=0;i<ipArr.length;i++){
+	if(pattern.test(ipArr[i]))
+	   document.write(ipArr[i]+"<br>");
+  }
+
+}
+</script>
+</head>
+<body>
+</body>
+<html>

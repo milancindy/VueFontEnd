@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#box{ width:200px; height:200px; background:#9C3;
+margin:200px;}
+#box:hover{
+/*旋转：1角度rotate(60deg) 2.放大多少倍 3. 偏移量4.倾斜度*/
+transform:rotate(60deg) skew(50deg) translate(40px); 
+background-color:red; 
+/*平滑过渡 1.让谁有效果2.变化的速度3.过渡的时间*/
+transition:all ease-in 2s;}
+</style>
+</head>
+
+<body>
+<div id="box"></div>
+</body>
+</html>

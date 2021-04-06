@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>元素创建</title>
+<script type="text/javascript">
+  window.onload=function(){
+   //获得body的引用 
+	var mybody=document.getElementsByTagName("body").item(0); 
+	//创建一个<table></table>元素 
+	mytable = document.createElement("TABLE"); 
+	//创建一个<TBODY></TBODY>元素 
+	mytablebody = document.createElement("TBODY"); 
+	// 创建行列 
+	for(j=0;j<3;j++) { 
+		//创建一个<TR></TR>元素 
+		mycurrent_row=document.createElement("TR"); 
+		for(i=0;i<3;i++) { 
+		//创建一个<TD></TD>元素 
+		mycurrent_cell=document.createElement("TD"); 
+		//创建一个文本元素 
+		currenttext=document.createTextNode("<input type='text'>本单元格行是： "+j+", 列是 "+i); 
+		//把新的文本元素添加到单元TD上
+		var input = document.createElement('input');
+		input.type = 'text';
+		input.value = '要设置的value';
+		mycurrent_cell.appendChild(input); 
+		mycurrent_cell.appendChild(currenttext); 
+		// appends the cell TD into the row TR 
+		//把单元TD添加到行TR上 
+		mycurrent_row.appendChild(mycurrent_cell); 
+		} 
+		//把行TR添加到TBODY上 
+		mytablebody.appendChild(mycurrent_row); 
+	} 
+	// 把 TBODY 添加到 TABLE 
+	mytable.appendChild(mytablebody); 
+	// 把 TABLE 添加到 BODY 
+	mybody.appendChild(mytable); 
+	// 把mytable的border 属性设置为2 
+	mytable.setAttribute("border","2"); 
+  }
+</script>
+</head>
+<body>
+<div id="main"></div>
+<span id="display"></span>
+</body>
+</html>

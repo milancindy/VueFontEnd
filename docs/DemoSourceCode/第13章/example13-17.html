@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>监听属性</title>
+		<script src="js/vue.min.js"></script>
+	</head>
+	<body>
+<div id = "computed_props">
+    数字 : <input type = "text" v-model = "num">
+    字母: <input type = "text" v-model = "str">
+</div>
+<p id="info"></p>
+<script type = "text/javascript">
+    var vm = new Vue({
+    el: '#computed_props',
+    data: {
+        num :0,
+        str:"A"
+    },
+    methods: {
+    },
+    computed :{
+    },
+    watch : {
+        num:function(val) {
+            this.num = val;
+            this.str = String.fromCharCode(65 + parseInt(val%26));
+        },
+        
+    }
+    });
+    // $watch 是一个实例方法
+    vm.$watch('num', function (newValue, oldValue) {
+    // 这个回调将在 vm.num 改变后调用
+    document.getElementById ("info").innerHTML = "修改前值为: " + oldValue + "，修改后值为: " + newValue;
+})
+</script>
+	</body>
+	</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	<title>钩子函数实现半场动画</title>
+		<style>
+			.ball{
+				width:20px;
+				height: 20px;
+				border-radius: 50%;
+				background-color: red;
+			}
+		</style>
+		
+	</head>
+	<body>
+	 <div id="test">
+		 <input type="button" value="start" @click="flag=!flag">
+		 <transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter">
+			 <div class="ball" v-show="flag"></div>
+		 </transition>
+		
+	 </div>
+		<script src="js/vue.min.js"></script>
+		<script>
+			var vm=new Vue({
+				el:'#test',
+				data:{
+					flag:false
+				},
+				methods:{
+					beforeEnter(el){
+						el.style.transform="translate(50px,50px)"
+					},
+					enter(el,done){
+						el.offsetWidth
+						el.style.transform="translate(150px,450px)"
+						el.style.transition="all 1s ease"
+						
+						//这里的doen(),其实就是afterEnter函数的引用，done表示立即调用afterEnter
+						done()
+					},
+					afterEnter(){
+						this.flag=false
+					}
+				}
+			});
+		</script>
+	</body>
+	</html>

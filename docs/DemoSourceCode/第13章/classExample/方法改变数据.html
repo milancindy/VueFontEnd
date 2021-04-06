@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js"></script>
+		<style>
+			
+			.one{ font-size: 36px; color: red;}
+			.two{ font-size: 96px; color: blue;}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<input type="checkbox" name="test" value='true' v-model='flag'/>模式切换<br>
+			<p :class="[flag?'one':'two']">hello world!</p>
+		</div>
+		<script>
+			var vm=new Vue({
+				el:'#app',
+				data:{
+					msg:'hello Vue world!',
+					flag:true,
+				}
+				
+			})
+		</script>
+	</body>
+</html>

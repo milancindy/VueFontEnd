@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<img :src="path">
+		</div>
+		<script>
+			var vm=new Vue({
+				el:'#app',
+				
+				data:{
+					msg:'Hello Vue World!',
+					path:'../img/logo.png'
+				}
+			})
+		</script>
+	</body>
+</html>

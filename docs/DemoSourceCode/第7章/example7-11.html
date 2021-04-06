@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>正则表达式</title>
+<script>
+window.onload=function(){
+  var strObj="This is test page!"
+  var reg=/is|es|ag/g;	
+  strResult=strObj.replace(reg,"**");	
+  document.write("源串是："+strObj+"<br>");
+  document.write("目的串是："+strResult);
+  
+}
+</script>
+</head>
+<body>
+</body></html>

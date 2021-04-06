@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>订单处理</title>
+<script>
+window.onload=function(){
+	var myTab=document.getElementById("myTable");
+	var mySelect=document.getElementsByName("select1");
+	var addBtn=document.getElementById("addBtn");
+	var delBtn=document.getElementById("delBtn");
+	
+	addBtn.onclick=function(){
+	 var row = document.createElement('tr'); 		//创建行  
+       
+     var idCell = document.createElement('td'); 	//创建第一列书名  
+     idCell.innerHTML = "<input type='text' value='西游4记' name='book0'>"; //填充数据  
+     row.appendChild(idCell); //加入行  ，下面类似  
+       
+     var nameCell = document.createElement('td');	//创建第二列单价  
+     nameCell.innerHTML = "<input type='text' value='20.0' name='value0'>";  
+     row.appendChild(nameCell);  
+       
+     var jobCell = document.createElement('td');	//创建第三列  
+     jobCell.innerHTML ="<input type='checkbox' name='select1'>";  
+     row.appendChild(jobCell);  
+ 	
+	 myTab.appendChild(row);
+	}
+	delBtn.onclick=function(){
+		count=mySelect.length-1;					//从后向前判断元素，删除元素 
+		for(i=count;i>-1;i--){
+		  if(mySelect.item(i).checked){
+			  myTab.deleteRow(i+1);
+		  }
+		}
+	}
+		
+}
+</script>
+</head>
+
+<body>
+<form action="#" method="post">
+<table width="500" border="1" id="myTable">
+  <tr>
+    <td>书名</td>
+    <td>单价</td>
+    <td>选中</td>
+  </tr>
+  <tr>
+    <td><input type="text" value="西游1记" name="book0"></td>
+    <td><input type="text" value="38.0" name="value0"></td>
+    <td><input type="checkbox" name="select1" ></td>
+  </tr>
+  <tr>
+    <td><input type="text" value="西游2记" name="book0"></td>
+    <td><input type="text" value="38.0" name="value0"></td>
+    <td><input type="checkbox" name="select1" ></td>
+  </tr>
+  <tr>
+    <td><input type="text" value="西游3记" name="book0"></td>
+    <td><input type="text" value="38.0" name="value0"></td>
+    <td><input type="checkbox" name="select1" ></td>
+  </tr>
+</table><br>
+	<input type="button" id="addBtn" value="增加一行">
+    <input type="button" id="delBtn" value="删除选中行">
+</form>
+</body>
+</html>

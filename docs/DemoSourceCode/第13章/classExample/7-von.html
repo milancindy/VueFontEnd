@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js"></script>
+		
+	</head>
+	<body>
+		<div id="app">
+			<button v-on:click="myClick">显示与隐藏测试</button>
+			<p v-if="flag">{{msg}}</p>
+		</div>
+		<script>
+			var vm=new Vue({
+				el:'#app',
+				data:{
+					msg:'Hello Vue World!',
+					flag:false
+				},
+				methods:{
+					myClick:function(){
+						this.flag=!this.flag
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

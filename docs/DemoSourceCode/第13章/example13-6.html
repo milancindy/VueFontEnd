@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>v-if</title>
+<script src="js/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+<p v-if="seen">seen值为真，显示</p>
+<p v-else>seen值为假，显示此句</p>
+<template v-if="ok">
+<h1>Vue</h1>
+<p>有条件渲染</p>
+</template>
+	</div>
+<script>
+new Vue({
+	   el: '#app',
+	   data: {
+	    seen: true,
+	    ok: true
+	   }
+	 })
+</script>
+</body>
+</html>

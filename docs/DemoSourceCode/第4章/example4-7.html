@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>浮动</title>
+<style>
+*{ margin:0px;
+   padding:0px;
+}
+
+html,body{ 
+	width:100%;
+	height:100%;
+	background:#FFC;
+}
+div.container{
+	width:80%;
+	height:100%;
+	background:#CF3;
+	margin:0 auto;
+}
+div.header,div.footer{		/*定义主页的页眉和页脚*/
+	color:white;
+	background-color:gray;
+	clear:left;
+	text-align:center;
+	height:80px;
+	line-height:80px;
+} 
+div.middle{
+	background-color:pink;
+	height:502px;
+}
+div.left,div.content,div.right{
+	float:left;
+	background:yellow;
+	height:100%;
+	width:70%;
+	
+}
+div.left,div.right{
+	background-color:#99F;
+	width:15%;
+}
+</style>
+</head>
+
+<body>
+  <div class="container">
+	<div class="header">
+		<h1 class="header">数学与计算机学院</h1>
+	</div>
+    <div class="middle">
+        <div class="left">
+            <p> Web程序设计基础——HTML、CSS、Javascript</p>
+        </div>
+        <div class="content">
+            <h2>CSS 样式表的作用</h2>
+            <p>http://www.whpu.edu.cn/div_css</p>
+            <p>希望认真学习CSS样式表，制作精彩的网页！</p>
+        </div>
+        <div class="right">
+            <p> Web程序设计课程实验显示</p>
+        </div>
+    </div>
+	<div class="footer">
+		版权：2019 艺丹小组
+	</div>
+  </div>
+</body>
+</html>

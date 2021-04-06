@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>getElementsByTagName方法</title>
+<script> 
+window.onload=function(){
+	// 获得所有tagName是body的元素（当然每个页面只有一个） 
+	var myDocumentElements=document.getElementsByTagName("body"); 
+	var myBody=myDocumentElements.item(0); 
+	// 获得body子元素种的所有P元素 
+	var myBodyElements=myBody.getElementsByTagName("p"); 
+	// 获得第二个P元素 
+	var myP=myBodyElements.item(1);
+	var myDisp=document.getElementById("disp");
+ 	//显示这个元素的文本 
+    myDisp.innerHTML="显示第二个P元素的内容是："+myP.firstChild.nodeValue;
+}
+</script> 
+</head>
+<body>
+ <p>hello</p> 
+ <p>world</p> 
+ <div id="disp"></div>
+</body>
+</html>

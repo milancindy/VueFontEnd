@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>表单综合实例</title>
+</head>
+
+<body>
+
+<details>
+<summary>Copyright oooooooooo 2011.</summary>
+<p>All pages and graphics on this web site are the property of W3School.</p>
+</details>
+
+<table align="center" width="500" border="0" cellpadding="2" cellspacing="0">  
+  <caption align="center"><h2>学生注册信息</h2></caption>  
+  <form action="server.php" method="post">  
+  <tr> 
+    <th>姓名：</th>  
+    <td ><input type="text" name="username" size="20" /></td>  
+  </tr>  
+  <tr>     <!-- 使用单选按钮域定义性别输入框 -->  
+     <th>性别：</th>  
+     <td>  
+       <input type="radio" name="sex" value="1" checked="checked" />男  
+       <input type="radio" name="sex" value="2" />女  
+       <input type="radio" name="sex" value="3" />保密  
+     </td>  
+  </tr>  
+  <tr>  <!--  使用下拉列表域定义学历输入框  -->  
+     <th>学历：</th>  
+     <td>  
+       <select name="edu">  
+         <option>--请选择--</option>  
+         <option value="1">高中</option>  
+         <option value="2">大专</option>  
+         <option value="3">本科</option>  
+         <option value="4">研究生</option>  
+         <option value="5">其他</option>  
+       </select>  
+      </td>  
+   </tr>  
+   <tr>  <!-- 使用复选框按钮域定义选修课程输入框 -->  
+     <th>选修课程：</th>  
+     <td>  
+       <input type="checkbox" name="course[]" value="4">Linux  
+       <input type="checkbox" name="course[]" value="5">Apache  
+       <input type="checkbox" name="course[]" value="6">Mysql  
+       <input type="checkbox" name="course[]" value="7">PHP  
+     </td>  
+   </tr>  
+   <tr>  <!-- 使用多行输入框定义自我[评价输入框 -->  
+     <th>自我评价：</th>  
+     <td><textarea name="eval" rows="4" cols="40"></textarea></td>  
+   </tr>  
+   <tr>  <!--  定义提交和重置两个按钮-->  
+     <td colspan="2" align="center">  
+       <input type="submit" name="submit" value="提交">  
+       <input type="reset" name="reset" value="重置">  
+     </td>  
+   </tr> 
+  </form>  
+</table>  
+</body>
+</html>

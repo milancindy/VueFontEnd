@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>选项卡</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="./js/jquery-1.11.2.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script>
+		    $(function () {
+		        $('#myTab li:eq(1) a').tab('show');
+		    });
+		</script>
+	</head>
+	<body>
+		<div class="container">
+		 <ul id="myTab" class="nav nav-tabs">
+		     <li class="active"><a href="#home" data-toggle="tab">
+		             Bootstrap</a>
+		     </li>
+		     <li><a href="#vue" data-toggle="tab">VUE</a></li>
+		     <li class="dropdown">
+		         <a href="#" id="myTabDrop1" class="dropdown-toggle"
+		            data-toggle="dropdown">前端<b class="caret"></b>
+		         </a>
+		         <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+		             <li><a href="#jmeter" tabindex="-1" data-toggle="tab">
+		                     HTML</a>
+		             </li>
+		             <li><a href="#ejb" tabindex="-1" data-toggle="tab">
+		                     CSS</a>
+		             </li>
+		         </ul>
+		     </li>
+		 </ul>
+		 <div id="myTabContent" class="tab-content">
+		     <div class="tab-pane fade in active" id="home">
+		         <p>Bootstrap，来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。</p> 
+			</div>
+		     <div class="tab-pane fade" id="vue">
+		         <p>Vue.js是一套构建用户界面的渐进式框架。与其他重量级框架不同的是，Vue 采用自底向上增量开发的设计。Vue 的核心库只关注视图层，并且非常容易学习，非常容易与其它库或已有项目整合。另一方面，Vue 完全有能力驱动采用单文件组件和Vue生态系统支持的库开发的复杂单页应用。</p>
+		     </div>
+		     <div class="tab-pane fade" id="jmeter">
+		         <p>HTML称为超文本标记语言，是一种标识性的语言。它包括一系列标签．通过这些标签可以将网络上的文档格式统一，使分散的Internet资源连接为一个逻辑整体。HTML文本是由HTML命令组成的描述性文本，HTML命令可以说明文字，图形、动画、声音、表格、链接等。</p>
+		     </div>
+		     <div class="tab-pane fade" id="ejb">
+		         <p>层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。	         </p>
+		     </div>
+		 </div>
+		
+		  </div>
+		
+	</body>
+</html>

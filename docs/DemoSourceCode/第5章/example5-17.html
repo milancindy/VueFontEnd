@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>构造方法定义对象</title>
+<script>
+window.onload=function(){
+ 
+function Student(name, age) {	//定义构造方法
+  this.name = name;				//定义类属性
+  this.age = age;
+  this.alertName = alertName;	//指定方法函数
+}
+
+function alertName() {			//定义类方法
+  document.write("姓名："+this.name)
+  document.write(", 年龄："+this.age+"<br/>");
+}
+
+var stu1 = new Student("刘艺丹", 20);	//创建对象
+stu1.alertName();					//调用对象方法
+var stu2 = new Student("张文普", 18);
+stu2.alertName();
+
+}
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

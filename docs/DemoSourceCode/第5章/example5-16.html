@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON对象</title>
+<script>
+window.onload=function(){
+ var student={ 					//定义JSON对象
+  studentId:"20190501001",
+  username:"刘艺丹",
+  tel:{home:81234567,mobile:13712345678},
+  address:
+  [
+   {city:"武汉",postcode:"420023"},
+   {city:"宜昌",postcode:"443008"}
+  ],
+  show:function(){
+	document.write("学号:"+this.studentId+"<br/>");
+    document.write("姓名:"+this.username+"<br/>");
+	document.write("宅电:"+this.tel.home+"<br/>");
+	document.write("手机:"+this.tel.mobile+"<br/>");
+	document.write("工作城市:"+this.address[0].city+",邮编:")
+	document.write(this.address[0].postcode+"<br/>");
+	document.write("家庭城市:"+this.address[1].city)
+	document.write(",邮编:"+this.address[1].postcode+"<br/>");
+	  }
+	};
+  student.show();	//调用对象的方法
+
+}
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

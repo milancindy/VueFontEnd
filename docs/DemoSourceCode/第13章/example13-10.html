@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>遍历对象</title>
+		<script src="js/vue.min.js"></script>
+	
+</head>
+		<body>
+			 <div id="app">
+			        <span v-for="(value,key) in mark">属性名：{{key}}，属性值：{{value}}<br></span>
+			</div>
+			
+			    <script type="text/javascript">
+			        var vm = new Vue({
+			            el:"#app",
+			            data:{
+			                mark:{
+			                    'C语言程序设计':90,
+			                    '离散数学':95,
+			                    '大学英语':89
+			                }
+			            }
+			       
+			        })
+			    </script>
+		   
+		</body>
+	</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery前后选择器</title>
+<script src="js/jquery-1.11.2.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+	if($("#username").val()==""){
+		$("#username+span").html("用户名不能为空！")
+		$("#username+span").css("display","inline")
+	}
+	else{
+		$("#username+span").css("display","none")
+	}
+  });
+});
+</script>
+<style>
+div span{display:none; background:red; color:white;}
+</style>
+</head>
+<body>
+
+<div>
+  <label>用户名</label>
+  <input type="text" id="username">
+  <span></span>
+</div>
+<button >测试</button>
+</body>
+</html>

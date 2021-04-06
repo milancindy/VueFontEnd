@@ -1,0 +1,58 @@
+<html>
+   <head>
+	<title>猜数游戏</title>	
+	<script language=JavaScript>
+
+		var rnd;
+		var pID=null;
+		var count	//设置猜测次数：10次
+		function rand(){
+			rnd=parseInt(Math.floor(Math.random()*100)+1);
+			//alert(rnd);
+			return rnd;
+ 		}
+		rnd=rand();
+		function compare(){
+			var n= parseInt(document.guess.num.value);
+			if(n>rnd)
+				document.guess.rs.value="你猜大了！";
+			if(n<rnd)
+				document.guess.rs.value="你猜小了！";
+			if(n==rnd){
+				document.guess.rs.value="猜对了，恭喜你！";
+				document.guess.bt2.disabled = true;
+				document.guess.bt1.disabled = false;
+			}
+			count--;
+			document.guess.countNumber.value=count;
+			if(count==0){
+				document.guess.rs.value="猜测上限次数已到，游戏结束！";
+				document.guess.bt2.disabled = true;
+				document.guess.bt1.disabled = false;
+			}
+			
+		}
+		function change(){
+			count=10;
+			document.guess.countNumber.value=count;
+			document.guess.bt2.disabled = false;
+			document.guess.bt1.disabled = true;
+			
+		}
+	</script>	
+   </head> 
+   <body>	
+	<center>
+	<font color=red face="隶书" size=6>猜数游戏</font>
+	<p><h4>请输入一个0-100之间的随机整数：</h4></p>
+	
+	<form name="guess">
+	<p><input type="text" name="num">
+	<input type=button name="bt2" value="提  交" onClick="compare()" disabled="true">
+	<input type=button name="bt1" value="开  始" onClick="change()"></p>
+	结果: <input type="text" name="rs" size=35 disabled="true"></p>
+    当前还可以猜测次数：<input type="text" name="countNumber" disabled="true">
+	</center>
+	</form>
+    </body>
+</html>

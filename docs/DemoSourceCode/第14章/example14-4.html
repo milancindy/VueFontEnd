@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    	<title>Vue组件中的数据与方法</title>
+		<script src="js/vue.min.js"></script>
+	</head>
+	<body>
+	  <div id="app">
+	    <counter></counter>
+	    <hr>
+	    <counter></counter>
+	    <hr>
+	    <counter></counter>
+	  </div>
+	
+	  <template id="temp">
+	    <div>
+	        <input type="button" value="加一" @click='increment'>
+	        <h3>{{count}}</h3>
+	    </div>
+	  </template>
+	
+	  <script>
+	    Vue.component('counter',{
+	      template:'#temp',
+	      data:function(){
+	      	return {count:0}
+	      },
+	      methods:{
+	        increment() {
+	          this.count++
+	        }
+	      }
+	    })
+	
+	    var vm=new Vue({
+	      el:'#app',
+	      data:{},
+	      methods:{}
+	    });
+	  </script>
+	</body>
+</html>
