@@ -2,6 +2,10 @@
 
 开发工具：WebStorm >2017, Node.js >V14
 
+整合了 elementUI、axios、router、store
+
+Demo页功能示例：
+
 点击 PostMessage按钮进行消息传递
 
 点击 EL 弹出气泡提示窗口
